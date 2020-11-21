@@ -1,0 +1,13 @@
+
+<center>
+<form action="/faves"method=GET>
+<h1>Favorite Pokemon</h1>
+<a href="/">Home</a>
+</center>
+
+<ul>
+        <% allPokemon.forEach(favorite => { %>
+      <li>      <%= favorite.name %>     </li>
+      <%  }) %>
+    </ul>
+</form>
