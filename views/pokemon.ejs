@@ -1,3 +1,10 @@
 <h1>You've reached the Favorites Page</h1>
 
-<h2><%= pokes[1].name  %> </h2>
+
+
+<% if(pokes.length === 0) { %>
+    <h4>No favorites here! Go catch some!</h4>
+<% } else { %>
+    <% for (let i = 0; i < pokes.length; i++) { %>
+        <h2><%= pokes[i].name %></h2>
+    <% }} %> 
