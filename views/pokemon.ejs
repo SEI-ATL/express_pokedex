@@ -5,6 +5,8 @@
 <% if(pokes.length === 0) { %>
     <h4>No favorites here! Go catch some!</h4>
 <% } else { %>
-    <% for (let i = 0; i < pokes.length; i++) { %>
-        <h2><%= pokes[i].name %></h2>
-    <% }} %> 
+    <% pokes.forEach((poke) => { %>
+        <h2><%= poke.name %></h2>
+    <% })} %> 
+    <!-- 'for' loop used before switching to forEach -->
+    <!-- for(let i = 0; i < pokes.length; i++) { pokes[i].name} -->
