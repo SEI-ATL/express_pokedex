@@ -1,0 +1,6 @@
+<h2>Favorites</h2>
+
+<% pokemon.forEach((p) => {
+    %><h3><%= p.dataValues.name %></h3>
+    <a href="/pokemon/<%= p.dataValues.name%>">Check out the details here</a>
+<% }) %>

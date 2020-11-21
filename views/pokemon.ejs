@@ -1,0 +1,40 @@
+<h2><%= onePokemon.dataValues.name %></h2>
+
+
+
+<script> 
+window.onload = function(){
+    const game = document.querySelector('#game')
+    var ctx = game.getContext("2d");
+
+const computedStyle = getComputedStyle(game);
+const height =computedStyle.height
+const width = computedStyle.width
+const size= 150;
+function drawBgImg(img) {
+    let bgImg = new Image();
+    
+     bgImg.src = img;
+     ctx.drawImage(bgImg, 0, 0, size, size);  
+ } 
+
+let counter = 0;
+let src;
+function sprite(){
+    if (counter === 0){
+        drawBgImg('<%=pokemonSprites.front_default%>', 0, 0, size, size)
+        counter = 1;
+    }else{
+        drawBgImg('<%=pokemonSprites.back_default%>', 0, 0, size, size)
+        counter = 0;
+    }
+}
+function rePaint(){
+    ctx.clearRect(0, 0, size, size);
+    
+    sprite();
+}
+setInterval(rePaint, 700)  
+} 
+</script> 
+<canvas id="game" height=150 width=150>Hello!</canvas>
