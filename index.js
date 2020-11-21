@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -27,6 +27,7 @@ app.use('/pokemon', require('./routes/pokemon'));
 const server = app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
+
 
 module.exports = server;
 

@@ -1,0 +1,13 @@
+<h1>Pokemon Details</h1>
+<h2> <%= pokemon.name %></h2>
+
+<ul>
+<div> Abilities: <%=pokemon.abilities[0].ability.name %>, <%=pokemon.abilities[1].ability.name %>, <%=pokemon.abilities[2].ability.name %>  </div>  
+<div> Weight: <%= pokemon.weight %>   </div>  
+<div>  Base HP: <%=pokemon.stats[0].base_stat  %>  </div>  
+<div>  Base Attack: <%=pokemon.stats[1].base_stat  %>  </div>  
+<div>  Base Defense: <%=pokemon.stats[2].base_stat  %>  </div>  
+<div>  Base Special Attack: <%=pokemon.stats[3].base_stat  %>  </div>  
+<div>  Base Special Defense: <%=pokemon.stats[4].base_stat  %>  </div>  
+<div>  Base Speed: <%=pokemon.stats[5].base_stat  %>  </div>  
+</ul>
