@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(126, 27, 27, 0.623) !important;
+    color: white;
+}
+.well {
+    background-color: gray !important;
+    text-align: center;
+}
+
+#favNames {
+    text-align: center;
+}
+#titlePokemon {
+    text-align: center;
+}
+
+.details {
+    text-align: center;
+    font-size: 45px;
+}
+
+#pokemonDetails {
+    text-align: center;
+    font-size: 80px;
+}
+
+#detailsName {
+    font-size: 80px;
+}
+
+#details {
+    margin: 100px;
+}

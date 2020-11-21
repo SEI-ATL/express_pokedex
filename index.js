@@ -8,6 +8,7 @@ const port = process.env.PORT || 1338;
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'))
 app.use(ejsLayouts);
 
 // GET - main index of site
@@ -30,5 +31,3 @@ const server = app.listen(port, () => {
 
 
 module.exports = server;
-
-// https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1050

@@ -1,7 +1,7 @@
-<h1>Here are your favorite pokemon</h1>
+<h1 id="titlePokemon">Here are your favorite pokemon</h1>
 
 <ul>
     <% favorites.forEach(favorite => { %> 
-        <li> <%= favorite.name %></li>
+        <div id="favNames"> <%= favorite.name.toUpperCase() %> </div>
 <%    }); %> 
 </ul>
