@@ -13,7 +13,6 @@ router.get('/', function(req, res) {
 });
 router.get('/:id', (req,res) => {
   const id = req.params.id
-  console.log(id)
   Axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
   .then(response => {
     let pokemon = response.data;
