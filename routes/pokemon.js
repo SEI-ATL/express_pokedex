@@ -11,6 +11,16 @@ router.get('/', function(req, res) {
   })
 });
 
+router.get('/:id', (req,res) => {
+  const id = req.params.id
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+  .then(response => {
+    let pokemon = response.data;
+    console.log(pokemon)
+    {res.render('pokemon/show', { pokemon })}
+})
+})
+;
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   db.pokemon.findOrCreate({
