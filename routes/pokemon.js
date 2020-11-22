@@ -6,10 +6,10 @@ var router = express.Router();
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
  db.pokemon.findAll()
-  .then((pokes) => {
+  .then((pokemon) => {
     // console.log(`This is the console for poke: ${poke}. It is ${typeof poke}`)
-    console.log(pokes)
-    res.render('pokemon', { pokes })
+    // console.log(pokes)
+    res.render('pokemon', { pokemon })
   })
   .catch((err) => {
     console.log(err)
@@ -17,9 +17,17 @@ router.get('/', function(req, res) {
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/', (req, res) => {
+  db.pokemon.create({
+    name: req.body.name
+  })
+  .then(() => {
+   res.redirect('/')
+  })
+  .catch((err) => {
+  console.log(err)
+})
 });
+
 
 module.exports = router;

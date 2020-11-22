@@ -2,10 +2,10 @@
 
 
 
-<% if(pokes.length === 0) { %>
+<% if(pokemon.length === 0) { %>
     <h4>No favorites here! Go catch some!</h4>
 <% } else { %>
-    <% pokes.forEach((poke) => { %>
+    <% pokemon.forEach((poke) => { %>
         <h2><%= poke.name %></h2>
     <% })} %> 
     <!-- 'for' loop used before switching to forEach -->
