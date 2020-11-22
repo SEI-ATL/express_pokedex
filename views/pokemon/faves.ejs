@@ -1,13 +1,16 @@
 
 <center>
-<form action="/faves"method=GET>
+<form action="/faves"method="GET">
 <h1>Favorite Pokemon</h1>
 <a href="/">Home</a>
 </center>
 
-<ul>
-        <% allPokemon.forEach(favorite => { %>
-      <li>      <%= favorite.name %>     </li>
-      <%  }) %>
+<ul class="list-group">
+    <% allPokemon.forEach(favorite => { %>
+      <form action="/" method="GET">
+      <a href="/pokemon/<%= favorite.name.toLowerCase()%> ">
+      <p class='favpoke'><%= favorite.name.toUpperCase()%></p>
+    </a>
+    <%  }) %>
     </ul>
 </form>

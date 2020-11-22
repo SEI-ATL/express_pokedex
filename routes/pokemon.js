@@ -23,4 +23,13 @@ router.post('/', function(req, res) {
   
 });
 
+router.get('/:name', (req, res) => {
+  let searchPoke = req.params.name
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${searchPoke}/`)
+  .then((response) => {
+    res.render('pokemon/show', {poke: response.data})
+  })
+  
+})
+
 module.exports = router;
