@@ -3,6 +3,8 @@ const express = require("express");
 const axios = require("axios");
 const ejsLayouts = require("express-ejs-layouts");
 const db = require("./models");
+const methodOverride = require('method-override');
+
 
 const path = require("path");
 
@@ -13,6 +15,7 @@ app.use(require("morgan")("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(methodOverride('_method'))
 
 app.use("/", express.static(path.join(__dirname, "public")));
 

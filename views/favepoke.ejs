@@ -12,7 +12,7 @@
                   Pokemon # <%= poke.pokeid %>
                 </li>
                 <li class="list-inline-item">
-                  <form method="DELETE" action="/pokemon">
+                  <form method="POST" action="/pokemon/<%=poke.pokeid %>/?_method=DELETE">
                     <input
                       hidden
                       type="text"
