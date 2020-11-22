@@ -6,7 +6,7 @@
     <h4>No favorites here! Go catch some!</h4>
 <% } else { %>
     <% pokemon.forEach((poke) => { %>
-        <h2><%= poke.name %></h2>
+      <a href="/pokemon/show/<%= poke.id %>"><h2><%= poke.name %></h2></a>  
     <% })} %> 
     <!-- 'for' loop used before switching to forEach -->
     <!-- for(let i = 0; i < pokes.length; i++) { pokes[i].name} -->

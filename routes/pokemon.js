@@ -7,8 +7,6 @@ router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
  db.pokemon.findAll()
   .then((pokemon) => {
-    // console.log(`This is the console for poke: ${poke}. It is ${typeof poke}`)
-    // console.log(pokes)
     res.render('pokemon', { pokemon })
   })
   .catch((err) => {
@@ -18,8 +16,10 @@ router.get('/', function(req, res) {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
-  db.pokemon.create({
-    name: req.body.name
+  db.pokemon.findOrCreate({
+    where: {
+      name: req.body.name
+    }
   })
   .then(() => {
    res.redirect('/')
@@ -28,6 +28,20 @@ router.post('/', (req, res) => {
   console.log(err)
 })
 });
+
+// GET /pokemon/show/id# - Grabs the id
+router.get('/show/:id', (req, res) => {
+  db.pokemon.findOne({
+    where: {id: req.params.id}
+  })
+  .then((pokemon) => {
+    res.render('show', { pokemon })
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+
+})
 
 
 module.exports = router;
