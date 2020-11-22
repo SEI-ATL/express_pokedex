@@ -1,3 +1,4 @@
+
 var express = require('express');
 var router = express.Router();
 var db = require('../models')
@@ -21,8 +22,24 @@ router.post('/', function(req, res) {
       name: req.body.name
     } 
   }).then((pokemon  =>{
-    console.log(`Storing ${pokemon} into our database.`)
+    console.log(`Storing ${pokemon.name} into our database.`)
+    res.redirect('/')
   }))
+  
+});
+
+router.delete('/:id', function(req, res) {
+  console.log( "!!!!!!!!!" + req.body.name)
+  db.pokemon.destroy({
+    where: {
+      name: req.body.name
+    } 
+  }).then((pokemon  =>{
+    console.log(`Removing ${pokemon.name} from our database.`)
+    res.redirect('/pokemon')
+  })).catch((err)=>{
+    console.log(err);
+  })
   
 });
 
