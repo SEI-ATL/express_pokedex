@@ -25,4 +25,14 @@ router.post('/', function(req, res) {
   // db.pokemon.findOrCreate
 });
 
+router.get('/:name', (req, res) => {
+  let search = req.params.name
+  console.log(search);
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${search}/`)
+
+  .then((response) => {
+    res.render('pokemon/details', {poke: response.data})
+})
+})
+
 module.exports = router;
