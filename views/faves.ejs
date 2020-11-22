@@ -1,7 +1,11 @@
 <h2>Favorites</h2>
 
 <% pokemon.forEach((p) => {
-    %><h3><%= p.dataValues.name %></h3>
+    
+    let upperPoke=p.dataValues.name 
+    let upperPokeStr =upperPoke[0].toUpperCase() + upperPoke.slice(1);
+    
+    %><h3><%= upperPokeStr %></h3>
     <a href="/pokemon/<%= p.dataValues.name%>">Check out the details here</a>
     <form method="POST" action="pokemon/<%= p.dataValues.name%>/?_method=DELETE">
         <input hidden type="text" name="name" value="<%= p.dataValues.name %>">
