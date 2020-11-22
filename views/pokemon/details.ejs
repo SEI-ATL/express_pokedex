@@ -1,1 +1,10 @@
-<%= poke.name %> 
+<ul>
+    <img src="<%=poke.sprites.front_shiny%>" width="200px" height="200px" alt="">
+    <li><%= poke.name %></li>
+    <li>HP: <%= poke.stats[0].base_stat %></li>
+    <li>Attack Damage: <%= poke.stats[1].base_stat %></li>
+    <li>Defense: <%= poke.stats[2].base_stat %></li>
+    <li>Special Attack : <%= poke.stats[3].base_stat %></li>
+    <li>Special Defense : <%= poke.stats[4].base_stat %></li>
+    <li>Speed : <%= poke.stats[5].base_stat %></li>
+</ul>

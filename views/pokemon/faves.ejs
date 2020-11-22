@@ -1,14 +1,13 @@
-<h1>favezzzz</h1>
+<h1>Your favorite Pokemon:</h1>
 
 <form action="/faves" method="GET">
     <ul>
         <% allPoke.forEach(fave => { %>
-            <a href="/pokemon/<%= fave.name.toUpperCase() %> ">
+            <a href="/pokemon/<%= fave.name.toLowerCase() %> ">
                 <li>
                     <%= fave.name %> 
                 </li>  
             </a>
         <% }) %> 
-        
     </ul> 
 </form>

@@ -32,6 +32,7 @@ router.get('/:name', (req, res) => {
 
   .then((response) => {
     res.render('pokemon/details', {poke: response.data})
+    // console.log(response.data);
 })
 })
 
