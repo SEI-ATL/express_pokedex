@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&display=swap');
+body {
+    background: linear-gradient(0.15turn, #d9e664, #54aae4);
+    font-family: 'IBM Plex Mono', monospace;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Sigmar One', cursive;
+    font-size: 50px;
+    -webkit-text-fill-color: yellow;
+    -webkit-text-stroke-color: blue;
+    -webkit-text-stroke-width: 4.00px;
+    text-shadow: 4px 4px black;
+}
+
+.pokeList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.op {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.well {
+    background-color: rgb(229, 239, 243);
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background-color: #54aae4;
+    border: none;
+    margin: 4px;
+}
+
+a {
+    color: navy;
+}
+
+.pokemonInfo {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokeDetails {
+    align-self: flex-start;
+    margin-left: 4rem;
+    ;
+}

@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="text-center">
+        <%= name.slice(0,1).toUpperCase() + name.slice(1,name.length) %>
+    </h1>
+    <p class="text-center">
+        <a href="/pokemon">
+            Favorites
+        </a>
+    </p>
+
+    <div class="well pokemonInfo">
+        <img src="<%= details.image %>" alt="<%= details.name %>">
+
+        <div class="pokeDetails">
+            <p>Type:
+                <% for( let type of details.type) { %>
+                    <span><%= type.type.name %> </span>
+                    <% } %>
+            </p>
+            <p>HP:
+                <%= details.hp %>
+            </p>
+            <ul>
+                <% for( let ability of details.abilities) { %>
+                    <p>
+                        <%= ability.ability.name %>
+                    </p>
+                    <% } %>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

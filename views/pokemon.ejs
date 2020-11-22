@@ -7,10 +7,13 @@
     <% pokemon.forEach(function(pokemon) { %>
         <div class="well">
             <h2>
-                <%= pokemon.name %>
+                <%= pokemon.name.slice(0,1).toUpperCase() + pokemon.name.slice(1,pokemon.name.length) %>
             </h2>
             <form method="GET" action="/pokemon/<%= pokemon.name %>">
                 <button class="btn btn-primary" type="submit">View details</button>
+            </form>
+            <form method="POST" action="/pokemon/<%= pokemon.name %>">
+                <button class="btn btn-primary" type="submit">Remove from Favorites</button>
             </form>
         </div>
         <% }); %>
