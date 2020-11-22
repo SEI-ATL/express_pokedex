@@ -1,7 +1,14 @@
-
-<h1>Your favorite Pokémon:</h1>
-  <ul>
+<!-- Local CSS -->
+<link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+<h1>Your Favorite Pokémon:</h1>
+  <ul class="list-group list-group-flush">
     <% favorites.forEach(favorite => { %>
-    <li>      <a href="#"> <%= favorite.name %> </a>    </li>
+    <li class="list-group-item">   <a href="/pokemon/<%= favorite.name.toLowerCase() %>"> <%= favorite.name %> </a>
+    </li>
     <%  }) %>
   </ul>
+
+  <form method="GET" action="/">
+    <input hidden type="text" name="name" value="">
+    <button class="btn btn-primary" id="backHome" type="submit">Back to Pokemon</button>
+  </form>

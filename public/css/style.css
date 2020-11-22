@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
+    display: grid;
+    background-color:gray;
+}
+
+img {
+    width: 200px;
+    margin-left:48px;
+}
+
+.link-center a{
+    color: palegreen;
+}
+
+.link-center {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    justify-self: center;
+    border: black solid 1px;
+    background-color:whitesmoke;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.card-text {
+    padding-left: 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.card-moves {
+    font-size: 17px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin-bottom: -15px;
+}
+
+.btn-danger {
+    justify-self: center;
+    margin-top: 15px;
+    margin-left: 90px;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 10px;
+}
+
+.well {
+    padding-top: 0px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 250px;
+    height: 100px;
+    display:inline-block;
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: -10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 25px;
+}
+
+hr { 
+    display: block;
+    width: 200px;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+}
+
+.list-group-item {
+    width: 200px;
+    margin-left: 50px;
+}
+
+.list-group-item {
+    width: 200px;
+    margin-left: 50px;
+}
+
+#backHome {
+    margin-left: 80px;
+}
