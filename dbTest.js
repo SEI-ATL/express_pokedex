@@ -1,7 +1,7 @@
 // const db = require('./models');
 
 // db.pokemon.create({
-//   name: 'Pikachu'
+//   name: 'Charmander'
 // }).then(function(poke) {
 //   console.log('Created: ', poke.name)
 // })

@@ -1,0 +1,14 @@
+<%let name = pokemon.name %>:</h1>
+<%let newName = name.charAt(0).toUpperCase() + name.slice(1) %>
+<h1>Details for <%= newName %>:</h1>
+<img src="<%= pokemon.sprites.other['official-artwork']['front_default']%>" alt="">
+<p>Types: <%= pokemon.types[0].type.name %></p>
+<p>Weight: <%= pokemon.weight %></p>
+<p>Height: <%= pokemon.height %></p>
+<p>Moves:</p> 
+<p><%= pokemon.moves[0].move.name %></p>
+<p><%= pokemon.moves[1].move.name %></p>
+<p><%= pokemon.moves[2].move.name %></p>
+<p><%= pokemon.moves[3].move.name %></p>
+
+
