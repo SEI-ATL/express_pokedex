@@ -1,10 +1,14 @@
 var express = require('express');
+var db = require('../models');
 var router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+  db.favorite.findAll()
+  .then( (pokemon) => {
+    res.render('favorites', { pokemon })
+  })
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
