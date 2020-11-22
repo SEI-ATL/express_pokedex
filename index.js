@@ -4,6 +4,8 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+const router = express.Router()
+
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -27,4 +29,4 @@ const server = app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
 
-module.exports = server;
+module.exports = router;
