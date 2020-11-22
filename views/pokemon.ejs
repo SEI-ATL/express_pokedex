@@ -5,16 +5,18 @@
     </p>
 
     <% pokemon.forEach(function(pokemon) { %>
-        <div class="well">
+        <div class="well favorite">
             <h2>
                 <%= pokemon.name.slice(0,1).toUpperCase() + pokemon.name.slice(1,pokemon.name.length) %>
             </h2>
-            <form method="GET" action="/pokemon/<%= pokemon.name %>">
-                <button class="btn btn-primary" type="submit">View details</button>
-            </form>
-            <form method="POST" action="/pokemon/<%= pokemon.name %>">
-                <button class="btn btn-primary" type="submit">Remove from Favorites</button>
-            </form>
+            <div class="options">
+                <form method="GET" action="/pokemon/<%= pokemon.name %>">
+                    <button class="btn btn-primary" type="submit">View details</button>
+                </form>
+                <form method="POST" action="/pokemon/<%= pokemon.name %>">
+                    <button class="btn btn-primary" type="submit">Remove favorite</button>
+                </form>
+            </div>
         </div>
         <% }); %>
 </div>
