@@ -1,5 +1,14 @@
-<h2><%= onePokemon.dataValues.name %></h2>
-
+<h2><% 
+    let upperPoke=onePokemon.dataValues.name 
+    let upperPokeStr =upperPoke[0].toUpperCase() + upperPoke.slice(1);
+    %>
+<%= upperPokeStr  %></h2>
+<style>
+    #game {
+        margin-left: 0%;
+    }
+    
+</style>
 
 
 <script> 
@@ -18,6 +27,8 @@ function drawBgImg(img) {
      ctx.drawImage(bgImg, 0, 0, size, size);  
  } 
 
+
+
 let counter = 0;
 let src;
 function sprite(){
@@ -35,6 +46,17 @@ function rePaint(){
     sprite();
 }
 setInterval(rePaint, 700)  
+
 } 
 </script> 
 <canvas id="game" height=150 width=150>Hello!</canvas>
+<h2>Weight : <%= pokeWeight %></h2>
+<h2>Height : <%= pokeHeight %></h2>
+<h2> Types</h2>
+<ul>
+    <% pokeTypes.forEach((p) => {
+        %><li><%= p.type.name %></li>
+        <% }) %>
+</ul>
+
+

@@ -35,9 +35,12 @@ router.get('/:id', (req, res) => {
        /////////////////////////////////
        axios.get(pokemonUrl).then(response => {
         let pokemonSprites = response.data.sprites;
-        console.log(pokemonSprites)
+        let pokeWeight = response.data.weight;
+        let pokeHeight = response.data.height;
+        let pokeTypes = response.data.types;
         const onePokemon = pokemon
-        res.render('pokemon', {onePokemon, pokemonSprites})
+        console.log(response.data.weight)
+        res.render('pokemon', {onePokemon, pokemonSprites, pokeWeight, pokeHeight, pokeTypes})
       }).catch((error)=>{console.log(error)});
 
        /////////////////////////////////
