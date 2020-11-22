@@ -1,0 +1,10 @@
+<h1>Favorite List</h1>        
+<form action="/" method="GET">
+<ul>
+    <% allPoke.forEach(favorite => { %>
+       <a href="/pokemon/<%= favorite.name.toLowerCase()%>"> 
+        <li><%= favorite.name.toUpperCase() %>
+        </li> </a>
+    <% }) %>
+    </ul>
+</form>

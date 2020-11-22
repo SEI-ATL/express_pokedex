@@ -1,0 +1,20 @@
+<h1 id="pokemonDetails">Pokemon Details</h1>
+<div class = "details">
+<h2 id="detailsName"> <%= pokemon.name.toUpperCase() %></h2>
+<ul>
+<div> Abilities: <% pokemon.abilities.forEach(ability => { %>
+    <% if(ability.ability.name) %>
+    <%= ability.ability.name %>
+<% }); %>
+<img src="<%=pokemon.sprites.other["official-artwork"].front_default%>" alt=""> 
+<div class="stat" id="weight"> Weight(est): <%= Math.round(pokemon.weight/10 * 2.205) %> lbs  </div>  
+<div class="stat" id= "hp">  Base HP: <%=pokemon.stats[0].base_stat  %>  </div>  
+<div class="stat" id= "attack">  Base Attack: <%=pokemon.stats[1].base_stat  %></div>  
+<div class="stat" id= "defense"> Base Defense: <%=pokemon.stats[2].base_stat  %></div>  
+<div class="stat" id= "special attack">  Base Special Attack: <%=pokemon.stats[3].base_stat  %>  </div>  
+<div class="stat" id= "special defense">  Base Special Defense: <%=pokemon.stats[4].base_stat  %>  </div>  
+<div class="stat" id= "speed">  Base Speed: <%=pokemon.stats[5].base_stat  %>  </div> 
+<img src="<%=pokemon.sprites.other.dream_world.front_default  %>" alt=""> 
+</ul>
+</div>
+
