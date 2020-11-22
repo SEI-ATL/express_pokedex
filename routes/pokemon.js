@@ -86,15 +86,14 @@ router.post("/", async (req, res) => {
 
 
 router.delete("/deleteall", async (req, res) => {
+  console.log('deleting all')
   const deleteallpoke = await db.pokemon
     .truncate({ restartIdentity: true })
     .catch(() => null);
 
-  if (!deleteallpoke) {
-    res.render("error");
-  } else {
-    res.redirect("/");
-  }
+
+    res.redirect("/pokemon");
+
 });
 
 
