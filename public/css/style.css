@@ -101,3 +101,8 @@ body {
     padding: 0!important;
 }
 
+input{
+    width: 250px!important;
+    height: 35px!important;
+    font-size: 20px!important;
+}

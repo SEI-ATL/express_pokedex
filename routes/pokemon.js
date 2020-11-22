@@ -83,20 +83,37 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+
+router.delete("/deleteall", async (req, res) => {
+  const deleteallpoke = await db.pokemon
+    .truncate({ restartIdentity: true })
+    .catch(() => null);
+
+  if (!deleteallpoke) {
+    res.render("error");
+  } else {
+    res.redirect("/");
+  }
+});
+
+
 router.delete("/:id", async (req, res) => {
-  console.log('deleting', req.params)
+  console.log("deleting", req.params);
   const delpokeid = req.params.id;
 
+  const delpoke = await db.pokemon
+    .destroy({
+      where: { pokeid: delpokeid },
+    })
+    .catch(() => null);
 
-  const delpoke = await db.pokemon.destroy({
-    where: { pokeid: delpokeid },
-  }).catch(()=>null)
-
-  if (!delpoke){
-    res.render("error")
-  }else{
+  if (!delpoke) {
+    res.render("error");
+  } else {
     res.redirect("/pokemon");
   }
 });
+
 
 module.exports = router;

@@ -16,8 +16,12 @@
 
     </ul>
     <form method="GET" action="/" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" placeholder="Enter Offset # for more" type ="number" name="offset">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" placeholder="Enter Offset # For More" type ="number" name="offset">
+      <button class="btn btn-primary m-3 btn-lg" type="submit">OFFSET</button>
+    </form>
+    <form method="GET" action="/" class="form-inline my-2 my-lg-0">
+      <input name="offset" type="hidden" value="<%= Math.floor(Math.random()* Math.floor(1000))%>">
+      <button class="btn btn-secondary btn-lg" type="submit">🎲</button>
     </form>
   </div>
 </nav>

@@ -43,6 +43,7 @@ app.use("/", express.static(path.join(__dirname, "public")));
 // });
 
 app.get("/", async (req, res) => {
+console.log(req.query)
   let offset = 0;
   offset = req.query.offset;
   let pokemonUrl = `http://pokeapi.co/api/v2/pokemon?limit=151&offset=${offset}`;

@@ -1,5 +1,6 @@
 <div class="container text-dark">
   <h1 class="h1 mb-5 text-center text-white">FAVORITE</h1>
+
   <div class="d-flex justify-content-center">
 
     <div class="card-deck">
@@ -49,4 +50,9 @@
       </div>
     </div>
   </div>
+
+  <form method = "POST" action="/pokemon/deleteall/?_method=DELETE">
+    <button class="btn btn-light btn-block" type="submit">❌ CLEAR ALL ❌</button>
+  </form>
+
 </div>
