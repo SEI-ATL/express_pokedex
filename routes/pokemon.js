@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../models')
+// const axios = require('axios');
+const db = require('../models');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
-  db.pokemon.findOne({
-    where: { name: 'Pikachu' }
-  }).then((poke) => {
+  db.pokemon.findAll().then(pokemon => {
     // console.log(res.params);
-    res.render('pokemon/index', { name: poke.name });
+    res.render('pokemon/index', { pokemon });
+    
     
   });
 });
