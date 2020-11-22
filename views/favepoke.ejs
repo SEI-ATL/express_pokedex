@@ -1,0 +1,52 @@
+<div class="container text-dark">
+  <h1 class="h1 mb-5 text-center text-white">FAVORITE</h1>
+  <div class="d-flex justify-content-center">
+
+    <div class="card-deck">
+      <div class="card-columns">
+        <% favepoke.forEach((poke)=> { %>
+          <div class="card bg-light mb-5">
+            <div class="card-header">
+              <ul class="list-inline">
+                <li class="list-inline-item h6">
+                  Pokemon # <%= poke.pokeid %>
+                </li>
+                <li class="list-inline-item">
+                  <form method="DELETE" action="/pokemon">
+                    <input
+                      hidden
+                      type="text"
+                      name="name"
+                      value="<%= poke.name %>"
+                    />
+                    <input
+                      hidden
+                      type="text"
+                      name="pokeid"
+                      value="<%= poke.pokeid %>"
+                    />
+                    <button class="btn btn-light" type="submit">🗑️</button>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            <% let sprite =
+            `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.pokeid}.png`
+            %>
+            <img class="card-img-top" src="<%= sprite %>" alt="Card image cap" />
+
+            <div class="card-body">
+              <h1 class="card-title"><%= poke.name %></h1>
+
+              <a
+                href="/pokemon/<%= poke.pokeid %>"
+                class="h1 btn btn-light btn-block"
+                >Details</a
+              >
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

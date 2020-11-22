@@ -1,16 +1,50 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+<div class="container text-dark">
+  <div class="card-deck">
+    <div class="card-columns">
+      <% pokemon.forEach(function(poke) { %>
+        <% let pokeid=poke.url.slice(34, poke.url.length-1) %>
+      <div class="card bg-light mb-5">
+        <div class="card-header">
+          <ul class="list-inline">
+            <li class="list-inline-item h6">
+              Pokemon # <%= pokeid %>
+            </li>
+            <li class="list-inline-item">
+              <form method="POST" action="/pokemon">
+                <input
+                  hidden
+                  type="text"
+                  name="name"
+                  value="<%= poke.name %>"
+                />
+                <input
+                  hidden
+                  type="text"
+                  name="pokeid"
+                  value="<%= pokeid %>"
+                />
+                <button class="btn btn-light" type="submit">⭐</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <% let sprite =
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`
+        %>
+        <img class="card-img-top" src="<%= sprite %>" alt="Card image cap" />
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
+        <div class="card-body">
+          <h1 class="card-title"><%= poke.name %></h1>
+
+          <a
+            href="/pokemon/<%= pokeid %>"
+            class="h1 btn btn-light btn-block"
+            >Details</a
+          >
+        </div>
+      </div>
+
+      <% }); %>
     </div>
-  <% }); %>
+  </div>
 </div>

@@ -1,0 +1,50 @@
+<div class="container text-dark">
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 50rem">
+      <img
+        class="card-img-top"
+        src="<%= pokedetails.image %>"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">#<%= pokedetails.idnum %>: <%= pokedetails.name %></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="h3">TYPE:</span> <% pokedetails.type.forEach(t=>{ %>
+          <span class="h5"><%= t %> - </span>
+          <% }); %>
+        </li>
+
+        <% for (const [k,v] of Object.entries(pokedetails.stats)) { %>
+        <li class="list-group-item"><span class="h3"><%= k %></span> : <%= v %></li>
+
+        <%} %>
+
+        <li class="list-group-item">
+          <span class="h3">MOVES:</span> <% pokedetails.moves.forEach(m=>{ %>
+          <span><%= m %> - </span>
+          <% }); %>
+        </li>
+      </ul>
+      <div class="card-body">
+        <form method="POST" action="/pokemon">
+          <input
+            hidden
+            type="text"
+            name="name"
+            value="<%= pokedetails.name %>"
+          />
+          <input
+            hidden
+            type="text"
+            name="pokeid"
+            value="<%= pokedetails.idnum %>"
+          />
+          <button class="btn btn-primary favorite" type="submit">⭐</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

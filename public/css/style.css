@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text&display=swap');
+
+body{
+    font-family: 'Big Shoulders Inline Text', cursive;
+}
+
+.poketitle{
+    /* background-image: url("../img/bg.jpg");
+    background-size: cover; */
+}
+
+body {
+
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position:absolute;
+    /* background-repeat: no-repeat; */
+    /* background-size: 150%;
+    background-position:50% 20%; */
+
+    }
+
+
+.card {
+
+    background-image: url("../img/card-bg.jpg")!important;
+    background-size: cover!important;
+    /* background-color:#FFFFFF99!important; */
+    border: 10px solid white!important;
+    margin-bottom: 40px!important;
+    /* width: 30%!important; */
+}
+
+.card-title{
+    font-size: 30px !important;
+    text-transform: uppercase!important;
+    text-align: center!important;
+}
+
+
+.h3{
+    text-transform: uppercase!important;
+}
+.navbar-brand{
+    font-size: 30px!important;
+}
+
+.nav-link{
+    font-size: 20px!important;
+    margin: 0 20px 0 20px!important;
+}
+
+.container{
+    margin-top:5%!important;
+}
+
+
+.btn{
+    font-size: 15px!important;
+   margin: 0 auto!important;
+
+}
+
+.card-header{
+    font-size: 15px!important;
+}
+
+
+
+.card-body{
+    background-color: #000000!important;
+    opacity: 70%;
+    color: white!important;
+}
+
+.favorite{
+    margin-left: 45%!important;
+}
+
+
+
+
+
+.card-columns {
+    -webkit-column-count: 4!important;
+    -moz-column-count: 4!important;
+    column-count: 4!important;
+    margin:0 auto;
+}
+
+
+
+
+.btn-light:hover{
+
+}
+
+.h6{
+    font-size: 15px!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
