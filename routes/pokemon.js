@@ -20,8 +20,6 @@ router.get('/', function(req, res) {
 router.get('/:id', (req, res) => {
   console.log(req.params.id);
   axios.get(`http://pokeapi.co/api/v2/pokemon/${req.params.id}`).then(response => {
-    // let image = response.data.sprites.other['official-artwork'].front_default
-    console.log(response.data.sprites.other['official-artwork'].front_default);
     res.render('pokemon/details' , { pokemon: response.data})
   })
 
