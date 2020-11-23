@@ -1,6 +1,8 @@
 <div class="container">
-  <h1 class="text-center"><%= pokemon.name %> </h1>
-  <p class="text-center">
-    <a href="/">Home</a>
-  </p>
+  <img src="<%= pokemon.imgUrl %> " alt="<%= pokemon.name %> " width="500px" height="500px"/>
+  <h1><%= pokemon.name %></h1>
+  <h3>Type: <%= pokemon.type %> </h3>
+  <h3>Base Experience: <%= pokemon.exp %> </h3>
+  <a href="/">Home</a>
+  <a href="/pokemon">Favorites</a>
 </div>
