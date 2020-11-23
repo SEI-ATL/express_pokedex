@@ -6,6 +6,7 @@ const app = express();
 let methodOverride = require('method-override');
 const port = process.env.PORT || 3000;
 
+app.use(methodOverride('_method'));
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));

@@ -13,6 +13,10 @@ header li {
   margin: 0 10px;
 }
 
+form {
+  display: inline-block;
+}
+
 .info {
   font-size: 1.5em;
 }
