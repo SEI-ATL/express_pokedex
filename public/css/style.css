@@ -1,115 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text&display=swap");
 
-body{
-    font-family: 'Big Shoulders Inline Text', cursive;
+body {
+  font-family: "Big Shoulders Inline Text", cursive;
 }
 
-.poketitle{
-    /* background-image: url("../img/bg.jpg");
+.poketitle {
+  /* background-image: url("../img/bg.jpg");
     background-size: cover; */
 }
 
 body {
-
-    background-image: url("../img/bg.jpg");
-    background-size: cover;
-    background-position:absolute;
-    /* background-repeat: no-repeat; */
-    /* background-size: 150%;
-    background-position:50% 20%; */
-
-    }
-
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: absolute;
+  background-attachment: fixed !important;
+  /* background-repeat: no-repeat; */
+  /* background-size: 150%;*/
+  background-position: 0 50px;
+}
 
 .card {
-
-    background-image: url("../img/card-bg.jpg")!important;
-    background-size: cover!important;
-    /* background-color:#FFFFFF99!important; */
-    border: 10px solid white!important;
-    margin-bottom: 40px!important;
-    /* width: 30%!important; */
+  background-image: url("../img/card-bg.jpg") !important;
+  background-size: cover !important;
+  /* background-color:#FFFFFF99!important; */
+  border: 10px solid white !important;
+  margin-bottom: 40px !important;
+  /* width: 30%!important; */
 }
 
-.card-title{
-    font-size: 30px !important;
-    text-transform: uppercase!important;
-    text-align: center!important;
+.card-title {
+  font-size: 30px !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
 }
 
-
-.h3{
-    text-transform: uppercase!important;
+.h3 {
+  text-transform: uppercase !important;
 }
-.navbar-brand{
-    font-size: 30px!important;
-}
-
-.nav-link{
-    font-size: 20px!important;
-    margin: 0 20px 0 20px!important;
+.navbar-brand {
+  font-size: 30px !important;
 }
 
-.container{
-    margin-top:5%!important;
+.nav-link {
+  font-size: 20px !important;
+  margin: 0 20px 0 20px !important;
 }
 
-
-.btn{
-    font-size: 15px!important;
-   margin: 0 auto!important;
-
+.container {
+  margin-top: 5% !important;
 }
 
-.card-header{
-    font-size: 15px!important;
+.btn {
+  font-size: 15px !important;
+  margin: 0 auto !important;
 }
 
-
-
-.card-body{
-    background-color: #000000!important;
-    opacity: 70%;
-    color: white!important;
+.card-header {
+  font-size: 15px !important;
 }
 
-.favorite{
-    margin-left: 45%!important;
+.card-body {
+  background-color: #000000 !important;
+  opacity: 70%;
+  color: white !important;
 }
 
-
-
-
+.favorite {
+  margin-left: 45% !important;
+}
 
 .card-columns {
-    -webkit-column-count: 4!important;
-    -moz-column-count: 4!important;
-    column-count: 4!important;
-    margin:0 auto;
+  -webkit-column-count: 4 !important;
+  -moz-column-count: 4 !important;
+  column-count: 4 !important;
+  margin: 0 auto;
 }
 
-
-
-
-.btn-light:hover{
-
+.btn-light:hover {
 }
 
-.h6{
-    font-size: 15px!important;
-    margin: 0!important;
-    padding: 0!important;
+.h6 {
+  font-size: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-input{
-    width: 250px!important;
-    height: 35px!important;
-    font-size: 20px!important;
+input {
+  width: 250px !important;
+  height: 35px !important;
+  font-size: 20px !important;
 }
 
-.fourohfour{
-color: white!important;
-font-size: 300px!important;
-display: inline!important;
+.fourohfour {
+  color: white !important;
+  font-size: 300px !important;
+  display: inline !important;
+}
 
+body::-webkit-scrollbar {
+  width: 2em;
+  background-color: transparent !important;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent !important;
+  display: none !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5% !important;
+}
+
+.card-details {
+  height: 70vh !important;
+}
+
+.card-details::-webkit-scrollbar {
+  width: 2em;
+  background-color: transparent !important;
+}
+
+.card-details::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent !important;
+  display: none !important;
+}
+
+.card-details::-webkit-scrollbar-thumb {
+  background-color: #ff000050;
+  border-radius: 5% !important;
 }

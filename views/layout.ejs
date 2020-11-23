@@ -22,6 +22,7 @@
   </head>
 
   <body class="bg-dark text-white">
+    <div class="force-overflow">
     <div class="poketitle"><% include partials/navbar %></div>
 
     <%- body %>
@@ -45,5 +46,11 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <!-- Development version -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
+<!-- Production version -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+  </div>
   </body>
 </html>
