@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     })
 })
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
+// POST /pokemon - add pokemon to favorites
 router.post('/', (req, res) => {
     db.pokemon.create({
         name: req.body.name
@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
     })
 })
 
-// GET /pokemon/:id - display details about individual pokemon
+// GET /pokemon/:name - display details about individual pokemon
 router.get('/:name', (req, res) => {
     const name = req.params.name
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then(response => {
@@ -27,6 +27,7 @@ router.get('/:name', (req, res) => {
     })
 })
 
+// DELETE /pokemon/:name - delete pokemon from favotires
 router.post('/:name', (req, res) => {
     const corpse = req.params.name
     db.pokemon.destroy({
