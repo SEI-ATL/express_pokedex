@@ -5,6 +5,10 @@
             <div class="well">
                 <h2><%= p.dataValues.name %></h2>
                 <p><a href="/pokemon/<%= p.dataValues.name %> ">View more details</a></p>
+                <form method="POST" action="/pokemon">
+                    <input hidden type="text" name="name" value="<%= p.dataValues.name %>">
+                    <button class="btn btn-primary" type="submit">Remove Pokemon from Favorites</button>
+                </form>
             </div>
         <% }) %>
     <% } else { %>
