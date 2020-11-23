@@ -30,7 +30,20 @@ router.post('/', function(req, res) {
 
 router.get('/pokemon/:id', (req, res) => {
   axios.get(`http://pokeapi.co/api/v2/pokemon/${req.params.id}`).then(response => {
-    console.log(response);
+    if (response.status === 200) {
+      const info = response.data.results;
+      const pokemonInfo = {
+        name: info.name,
+        species: info.species.name,
+        weight: info.weight,
+        ability: info.abilities[0].ability.name,
+        move: info.moves[0].move.name,
+      }
+    }
+    res.render('show', { name, species, weight, ability, move });
+    // abilities[0].ability.name
 })
+})
+
 
 module.exports = router;
