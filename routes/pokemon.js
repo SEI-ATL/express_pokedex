@@ -3,15 +3,15 @@ var router = express.Router();
 const db = require('./models');
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/', function(req, res) {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+router.get('/pokemon', function(req, res) {
+    // TODO: Get all records from the DB and render to view
+    res.render('pokemon/index');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/pokemon', function(req, res) {
+    // TODO: Get form data and add a new record to DB
+    res.redirect('/pokemon');
 });
 
 module.exports = router;
