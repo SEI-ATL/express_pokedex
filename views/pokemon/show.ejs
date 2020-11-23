@@ -6,7 +6,7 @@
 <div class="container info">
   <h2><%= capitalize(info.name) %></h2>
   <img src="<%= info.sprites.other['official-artwork'].front_default %>" alt="<%= capitalize(info.name) %>">
-  <p>Type: <%= info.types[0].type.name %></p>
+  <p>Types: <%= info.types.map(type => type.type.name).join(', ') %></p>
   <p>Height: <%= info.height %> decimetres</p>
   <p>Weight: <%= info.weight %> hectograms</p>
   <p>Abilities:</p>
