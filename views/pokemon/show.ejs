@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="text-center"><%= pokemon.name.toUpperCase() %></h1>
+    <img src="<%= pokemon.sprites.other['official-artwork']['front_default'] %>" alt="artwork of <%= pokemon.name %>">
+    <ul>
+        <li>Number: <%= pokemon.id %></li>
+        <li>Type: 
+            <ul><% pokemon.types.forEach(function(element) { %>
+                <li><%= element.type.name %></li>
+                <% }); %>
+            </ul>
+        </li>
+        <li>Ability: 
+            <ul><% pokemon.abilities.forEach(function(element) { %>
+                <li><%= element.ability.name %></li>
+                <% }); %>
+            </ul>
+        </li>
+        <li>Stats: 
+            <ul><% pokemon.stats.forEach(function(element) { %>
+                <li><%= element.stat.name %> : <%= element['base_stat'] %></li>
+                <% }); %>
+            </ul>
+        </li>
+        <li>Available Moves: <%= pokemon.moves.length %></li>
+    </ul>
+</div>
