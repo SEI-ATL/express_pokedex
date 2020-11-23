@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../models')
+const axios = require('axios');
+const db = require('../models');
 
 
 router.get('/', function(req, res) {
@@ -19,5 +20,14 @@ router.post('/', function(req, res) {
     res.redirect('/pokemon')
   })
 });
+
+router.get('/:name', (req, res) => {
+  let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.body.name}`;
+
+    axios.get(pokemonUrl).then((response) => {
+      res.render('pokemon/show', { pokemon: response.data })
+    })
+})
+
 
 module.exports = router;
