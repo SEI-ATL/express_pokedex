@@ -1,0 +1,10 @@
+<div class="details">
+    <h3><%= poke.name.toUpperCase() %> </h3>
+        <img src="<%= poke.sprites.front_default  %>" alt="<%= poke.name  %> ">
+        <p>Type:  <%= poke.types[0].type.name.toUpperCase() %> </p>
+        <p>HP: <%= poke.stats[0].base_stat  %> </p>
+        <p>ATK: <%= poke.stats[1].base_stat  %> </p>
+        <p>DEF: <%= poke.stats[2].base_stat  %> </p>
+        <a href="/">Home</a> <br>
+        <a href="/pokemon">Favorites</a>
+    </div>
