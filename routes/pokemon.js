@@ -24,11 +24,9 @@ router.post('/', function(req, res) {
       db.pokemon.findOrCreate({
         where: { name: pokemon },
         defaults: { name: pokemon }
+      }).then((pokemon)=> {
+        res.redirect('/pokemon/favorite');
       })
-      // .catch((error) => {
-      //   res.status(400).render('404')
-      // })
-  res.redirect('/');
 });
 
 router.get('/:id', (req, res) =>{
