@@ -1,6 +1,17 @@
 
-<p><%=`This is ${pokeDetails.name.charAt(0).toUpperCase()}${pokeDetails.name.slice(1)}` %></p>
+<p>Name: <%=`${pokeDetails.name.charAt(0).toUpperCase()}${pokeDetails.name.slice(1)}` %></p>
 
 <img src="<%=pokeDetails.sprites.other[`official-artwork`].front_default %>" alt="<%=pokeDetails.name%>">
-<p>Ability: <%=`${pokeDetails.abilities[0].ability.name.charAt(0).toUpperCase()}${pokeDetails.abilities[0].ability.name.slice(1)}` %></p>
+<p>1st Ability: <%=`${pokeDetails.abilities[0].ability.name.charAt(0).toUpperCase()}${pokeDetails.abilities[0].ability.name.slice(1)}` %></p>
+<p>2nd Ability: <%=`${pokeDetails.abilities[1].ability.name.charAt(0).toUpperCase()}${pokeDetails.abilities[1].ability.name.slice(1)}` %></p>
+<p>Base Experience: <%= pokeDetails.base_experience %></p>
+<p>Height: <%= pokeDetails.height %></p>
+<p>1st Move: <%= `${pokeDetails.moves[0].move.name.charAt(0).toUpperCase()}${pokeDetails.moves[0].move.name.slice(1)}` %></p>
+<p>2nd Move: <%= `${pokeDetails.moves[1].move.name.charAt(0).toUpperCase()}${pokeDetails.moves[1].move.name.slice(1)}` %></p>
+<p>3rd Move: <%= `${pokeDetails.moves[2].move.name.charAt(0).toUpperCase()}${pokeDetails.moves[2].move.name.slice(1)}` %></p>
 
+
+<a onclick="goBack()" href="#">Back</a>
+<script>
+  function goBack() { window.history.back() }
+</script>
