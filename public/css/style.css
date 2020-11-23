@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+
+#pokemonDetails {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 50px;
+    font-family: 'Goldman', cursive;
+    font-stretch: ultra-expanded;
+}
+#detailsName {
+    display: flex;
+    justify-content: center;
+    font-family: 'Goldman', cursive;
+}
+
+.stat {
+    font-size: 20px;
+    font-family: 'Goldman', cursive;
+    text-align: center;
+
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+}
+.detailshead {
+    font-size: 20px;
+    font-family: 'Goldman', cursive;
+    display: flex;
+    justify-content: center;
+    
+}
+a {
+    font-family: 'Goldman', cursive;
+    font-size: 25px;
+}
+
+.second {
+    position: fixed;
+    top: 480px;
+    left: 1180px;
+}
+.secondpic {
+    max-height: 160px;
+
+}
+
+h1 {
+    font-size: 25px;
+    font-family: 'Goldman', cursive;
+    text-align: center;
+}
