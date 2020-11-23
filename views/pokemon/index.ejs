@@ -3,6 +3,9 @@
 
 <ul>
     <% favorites.forEach(fav => { %> 
-        <div id="favs"> <%= fav.name %> </div>
+        <div class="well">
+            <a href="/pokemon/<%= fav.name %> " 
+            > <%= fav.name %> </a>
+        </div>
 <%    }); %> 
 </ul> 

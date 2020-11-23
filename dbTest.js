@@ -4,7 +4,7 @@ const db = require('./models');
 db.pokemon.create({
   name: 'Pikachu'
 }).then(function(poke) {
-  console.log('Created: ', poke.name)
+  console.log(poke)
 })
 
 db.pokemon.findAll().then(function(poke) {
