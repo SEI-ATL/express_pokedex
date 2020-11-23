@@ -37,8 +37,8 @@ router.post('/', function(req, res) {
     })
 });
 
-//POST /pokemon/:id   - delete pokemon form favorites
-router.post('/:id', function(req, res) {
+//DELETE /pokemon/:id   - delete pokemon form favorites
+router.delete('/:id', function(req, res) {
     // TODO: Get form data and add a new record to DB
     let pokemon = req.params.id;
     db.pokemon.destroy({ where: { name: pokemon } }).then(() => {

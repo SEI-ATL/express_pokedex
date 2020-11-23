@@ -13,7 +13,7 @@
                 <form method="GET" action="/pokemon/<%= pokemon.name %>">
                     <button class="btn btn-primary" type="submit">View details</button>
                 </form>
-                <form method="POST" action="/pokemon/<%= pokemon.name %>">
+                <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
                     <button class="btn btn-primary" type="submit">Remove favorite</button>
                 </form>
             </div>
