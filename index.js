@@ -9,10 +9,12 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
 
 // GET - main index of site
 app.get('/', function(req, res) {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=150';
   // Use request to call the API
   axios.get(pokemonUrl).then(response => {
     let pokemon = response.data.results;
