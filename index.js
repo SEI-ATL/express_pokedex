@@ -25,6 +25,9 @@ app.get('/', function(req, res) {
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'))
 
+// Access newly created CSS file with serving static files
+app.use(express.static('public'))
+
 const server = app.listen(port, () => {
     console.log(`Server is running on ${port}`)
 })
