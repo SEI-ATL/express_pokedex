@@ -4,17 +4,18 @@ const db = require('./models')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/pokemon', function(req, res) {
-    // TODO: Get all records from the DB and render to view
-    res.render('pokemon/index')
+    db.pokemon.findAll().then(pokemons => {
+        res.render('pokemon/index', { pokemons })
+    })
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/pokemon', function(req, res) {
-    // TODO: Get form data and add a new record to DB
     db.pokemon.create({
         name: req.body.name
+    }).then(post => {
+        res.redirect('/pokemon')
     })
-    res.redirect('/pokemon')
 })
 
 module.exports = router
