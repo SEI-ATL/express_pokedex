@@ -11,6 +11,7 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static(__dirname + '/public'))
 
 // GET - main index of site
 app.get('/', function(req, res) {
@@ -24,6 +25,7 @@ app.get('/', function(req, res) {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
 
 const server = app.listen(port, () => {
   console.log(`Server is running on ${port}`);

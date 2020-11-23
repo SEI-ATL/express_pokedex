@@ -5,3 +5,8 @@ body {
 .card {
     justify-self: center;
 }
+
+.well {
+    display: inline-flexbox;
+    justify-self: flex-start;
+}
