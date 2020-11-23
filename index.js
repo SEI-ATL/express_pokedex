@@ -10,6 +10,10 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+//serving static files lets you use file that you have in public folder
+app.use(express.static(__dirname + '/public')) 
 
 // GET - main index of site
 app.get('/', function(req, res) {

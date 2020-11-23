@@ -36,7 +36,8 @@
     
     <h2><b>Type:</b></h2>
         <ul>    
-            <li><%=  pokemon.types[0].type.name %></li>
+            <li><%=  pokemon.types.map((typeObj) => 
+                typeObj.type.name).join(',') %></li>
         </ul>
     
 </div>
