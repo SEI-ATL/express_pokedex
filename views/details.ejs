@@ -31,7 +31,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <span class="h3">TYPE:</span> <% pokedetails.type.forEach(t=>{ %>
-            <span class="h5"><%= t %> - </span>
+            <%= t %>
             <% }); %>
           </li>
 
@@ -44,7 +44,7 @@
 
           <li class="list-group-item">
             <span class="h3">MOVES:</span> <% pokedetails.moves.forEach(m=>{ %>
-            <span><%= m %> - </span>
+            <span><%= m %>,  </span>
             <% }); %>
           </li>
         </ul>
