@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="text-center">Favorites</h1>
+    <p class="text-center">
+        <a href="/">Add More Pokemon</a>
+    </p>
+    <% if (pokemons) { %>
+        <% pokemons.forEach(function(p) { %>
+            <div class="well">
+                <h2><%= p.dataValues.name %></h2>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h2>No favorites yet!</h2>
+    <% } %>
+</div>
