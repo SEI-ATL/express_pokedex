@@ -20,9 +20,9 @@ router.post('/', (req, res) => {
 })
 
 // GET /pokemon/:id - display details about individual pokemon
-router.get('/:id', (req, res) => {
-    const id = req.params.id
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => {
+router.get('/:name', (req, res) => {
+    const name = req.params.name
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then(response => {
         res.render('pokemon/show', { pokemon: response.data })
     })
 })
