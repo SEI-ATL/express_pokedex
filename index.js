@@ -45,7 +45,11 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.get("/", async (req, res) => {
 console.log(req.query)
   let offset = 0;
-  offset = req.query.offset;
+  if (Math.floor(req.query.offset)>1050-151){
+    offset = 1050-151;
+  }else{
+    offset = Math.floor(req.query.offset)
+  }
   let pokemonUrl = `http://pokeapi.co/api/v2/pokemon?limit=151&offset=${offset}`;
 
   const response = await axios.get(pokemonUrl).catch(() => null);
