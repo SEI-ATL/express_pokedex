@@ -1,5 +1,6 @@
 
-<p><%= pokemon.name %></p>
+<p><%=`This is ${pokeDetails.name.charAt(0).toUpperCase()}${pokeDetails.name.slice(1)}` %></p>
 
-
+<img src="<%=pokeDetails.sprites.other[`official-artwork`].front_default %>" alt="<%=pokeDetails.name%>">
+<p>Ability: <%=`${pokeDetails.abilities[0].ability.name.charAt(0).toUpperCase()}${pokeDetails.abilities[0].ability.name.slice(1)}` %></p>
 
