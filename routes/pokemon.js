@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-const db = require('./models')
+const db = require('../models')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/pokemon', function(req, res) {
