@@ -5,8 +5,8 @@
             <div class="well">
                 <h3><%= pokemon.name %></h3>
                 <p><a href="/pokemon/<%= pokemon.name %> ">View more details</a></p>
-                <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETTE">
-                    <button class="btn btn-primary" type="submit">Remove Pokemon from Favorites</button>
+                <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
+                    <button class="btn btn-danger" type="submit">Remove Pokemon from Favorites</button>
                 </form>
             </div>
         <% }) %>
