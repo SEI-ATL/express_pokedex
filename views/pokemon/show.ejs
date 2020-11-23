@@ -4,9 +4,12 @@
     <p class="text-center"><a href="/">Home</a></p>
     <img src="<%= pokemon.sprites.other['official-artwork']['front_default'] %>" alt="<%= pokemon.name %>">
     <h2><b>Ability:</b> </h2>
-        <ul>
-            <li><%= pokemon.abilities[0].ability.name %> </li>
-            <li><%= pokemon.abilities[1].ability.name %> </li>
+        <ul> <% pokemon.abilities.forEach(ability => { %>
+            <% if(ability.ability.name) %> 
+            <li><%= ability.ability.name %> </li>
+            
+            
+        <% }) %> 
         </ul>
      
     <h2><b>Stats:</b></h2>
