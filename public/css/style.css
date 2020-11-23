@@ -1,0 +1,7 @@
+body {
+    display: grid;
+}
+
+.card {
+    justify-self: center;
+}
