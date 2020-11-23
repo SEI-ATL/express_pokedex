@@ -1,4 +1,5 @@
 const db = require('../models');
+const axios = require('axios'); 
 
 var express = require('express');
 var router = express.Router();
@@ -29,8 +30,12 @@ router.get('/:id', (req, res) => {
   db.pokemon.findOne({
     where: { id: req.params.id }
   }).then((pokemon) => {
-    console.log(pokemon);
-    res.send('almost there...')
+    console.log(pokemon.name);
+    axios.get(`http://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+    .then((response) => {
+      console.log(response.data);
+      res.render('pokemon/show', { pokemon: response.data })
+    })
   })
 })
 
