@@ -7,6 +7,7 @@
         <% pokemons.forEach(function(p) { %>
             <div class="well">
                 <h2><%= p.dataValues.name %></h2>
+                <p><a href="/pokemon/<%= p.dataValues.name %> ">View more details</a></p>
             </div>
         <% }) %>
     <% } else { %>
