@@ -31,7 +31,7 @@ router.get('/:name', (req, res) => {
   const name = req.params.name
   axios.get(`https://pokeapi.co/api/v2/pokemon/${name}/`)
   .then((response) => {
-    const myPokemon = respose.data
+    const myPokemon = response.data
     res.render('pokemon/show', {myPokemon})
   })
 
