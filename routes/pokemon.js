@@ -27,9 +27,10 @@ router.get('/:name', (req, res) => {
     })
 })
 
-router.delete('/', (req, res) => {
+router.post('/:name', (req, res) => {
+    const corpse = req.params.name
     db.pokemon.destroy({
-        where: { name: req.body.name }
+        where: { name: corpse }
     }).then(response => {
         res.redirect('/pokemon')
     })
