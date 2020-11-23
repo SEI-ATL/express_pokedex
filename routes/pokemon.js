@@ -14,6 +14,8 @@ router.get('/', function(req, res) {
   });
 });
 
+
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
@@ -26,6 +28,16 @@ router.post('/', function(req, res) {
     res.redirect('/pokemon');
 
   })
+});
+
+router.get('/:name', (req, res) => {
+  let pokemonInfo = req.params.name;
+  axios.get(`http://pokeapi.co/api/v2/pokemon/${pokemonInfo}`).then((response) => {
+    res.render('pokemon/show', { pokemon: response.data });
+    console.log(response.data);
+  }).catch(err => {
+    console.log(err);
+  });
 });
 
 module.exports = router;
