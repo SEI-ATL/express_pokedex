@@ -17,23 +17,37 @@
         <img src="<%= details.image %>" alt="<%= details.name %>">
 
         <div class="pokeDetails">
-            <p>Type:
-                <% for( let type of details.type) { %>
-                    <span><%= type.type.name %> </span>
-                    <% } %>
-            </p>
-            <p>HP:
-                <%= details.hp %>
-            </p>
-            <ul>
-                <% for( let ability of details.abilities) { %>
-                    <p>
-                        <%= ability.ability.name %>
-                    </p>
-                    <% } %>
-            </ul>
+            <div class="type">
+                <p>Type:
+                    <ul>
+                        <% for( let type of details.type) { %>
+                            <p>
+                                <%= type.type.name.slice(0,1).toUpperCase() + type.type.name.slice(1,type.type.name.length) %>
+                            </p>
+                            <% } %>
+                    </ul>
+                </p>
+                <p>HP:
+                    <%= details.hp %>
+                </p>
+            </div>
+            <div class="ability">
+                <p>Abilities:</p>
+                <ul>
+                    <% for( let ability of details.abilities) { %>
+                        <p>
+                            <%= ability.ability.name.slice(0,1).toUpperCase() + ability.ability.name.slice(1,ability.ability.name.length) %>
+                        </p>
+                        <% } %>
+                </ul>
+            </div>
         </div>
-
+        <form class="add" method="POST" action="/pokemon">
+            <input hidden type="text" name="name" value="<%= name %>">
+            <button class="btn btn-primary" type="submit">Add to Pokedex</button>
+        </form>
     </div>
+
+
 
 </div>

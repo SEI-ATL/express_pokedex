@@ -54,6 +54,9 @@ a {
 .pokeDetails {
     align-self: flex-start;
     margin-left: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 45vw;
 }
 
 .favorite {
