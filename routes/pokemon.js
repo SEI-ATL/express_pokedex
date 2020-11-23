@@ -1,16 +1,38 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const axios = require('axios')
 
-// GET /pokemon - return a page with favorited Pokemon
-router.get('/', function(req, res) {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
-});
+const db = require('../models')
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
-});
 
-module.exports = router;
+const router = express.Router()
+
+router
+  .route('/')
+  .get((_, res) => {
+    db.pokemon.findAll().then(favorites => { res.render('pokemon/', { favorites }) })
+  })
+  .post(({ body: { name } }, res) => {
+    db.pokemon.findOrCreate({
+      where: { name }
+    }).then(([pokemon, created]) => { res.redirect('/pokemon') })
+  })
+
+router
+  .route('/:name')
+  .get((req, res) => {
+    let pokemonName = req.params.name
+    let requestUrl = `http://pokeapi.co/api/v2/pokemon/${pokemonName}`
+
+    axios.get(requestUrl)
+      .then(({ data }) => {
+        res.render('pokemon/detail', { pokemon: data })
+      })
+      .catch(e => { console.error(e.stack) })
+  })
+  .delete((req, res) => {
+    db.pokemon.findByPk(req.body.id)
+      .then(poke => poke.destroy().then(res.redirect('/pokemon')))
+      .catch(e => { console.error(e.stack) })
+  })
+
+module.exports = router

@@ -1,0 +1,17 @@
+<ul>
+  <% favorites.forEach(({name, id}) => { %>
+  <li>
+    <a href="/pokemon/<%= name %>"> <%= name %></a>
+    <form action="/pokemon/<%= name %>?_method=DELETE" method="post">
+      <input type="hidden" name="id" value="<%= id %>" />
+      <button type="submit">Delete</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>
+<a onclick="goBack()" href="#">Back</a>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>

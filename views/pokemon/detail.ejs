@@ -1,0 +1,15 @@
+<ul>
+  <li>Name: <%= pokemon.name %></li>
+  <li>Pokedex Number: <%= pokemon.id %></li>
+  <li>Height (in decimeters): <%= pokemon.height %></li>
+  <li>Weight (in hectograms): <%= pokemon.weight %></li>
+  <% pokemon.types.forEach(({type}, i) => { %>
+  <li>Type <%= ++i %>: <%= type.name %></li>
+  <% }) %>
+</ul>
+<a onclick="goBack()" href="#">Back</a>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
