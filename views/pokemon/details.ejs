@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="text-center">Pokemon Details</h1>
+    <p class="text-center">
+      <a href="/">Home</a>
+      <a href="/pokemon">Favorites</a>
+    </p>
+
+    <div class="text-center">
+
+        <h1>Name: <%= pokemon.name %></h1>
+
+
+
+        <h2>Pokemon #: <%= pokemon.id %></h2>
+
+        <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>" srcset="">
+
+        <h3>Height: <%= pokemon.height %></h3>
+        <h3>Weight: <%= pokemon.weight %></h3>
+        <h3>Type: <%= pokemon.types[0].type.name %></h3>
+        <form method="POST" action="/pokemon">
+            <input hidden type="text" name="name" value="<%= pokemon.name %>">
+            <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+          </form>
+    </div>
+   
+</div>
