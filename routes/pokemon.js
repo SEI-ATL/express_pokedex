@@ -1,3 +1,4 @@
+const axios = require('axios'); 
 var express = require('express');
 var db = require('../models');
 var router = express.Router();
@@ -25,5 +26,20 @@ router.post('/', function(req, res) {
     res.redirect('/pokemon')
   })
 });
+
+router.get('/:name', (req, res) => {
+  let pokeName = req.params.name;
+  let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokeName}`;
+  axios.get(pokemonUrl).then(response => {
+    console.log();
+    let pokemon = {
+      name: response.data.name,
+      type: response.data.types[0].type.name,
+      exp: response.data.base_experience,
+      imgUrl: response.data.sprites.other['official-artwork'].front_default
+    }
+    res.render('pokemon', { pokemon });
+  });
+})
 
 module.exports = router;
