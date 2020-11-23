@@ -1,48 +1,59 @@
-<h1> <%= pokemon.name.toUpperCase() %>   </h1>
-
-<img src="<%= pokemon.sprites.other['official-artwork']['front_default'] %>" alt="<%= pokemon.name %>">
-
-<h2><b>Ability:</b> 
-    <ul>
-        <li><%= pokemon.abilities[0].ability.name %> </li>
-        <li><%= pokemon.abilities[1].ability.name %> </li>
-
-    </ul>
-    
-    
-
-</h2> 
-
-
-<h2><b>Games:</b>
-    
-    <ul>
-        <li><%=  pokemon.game_indices[0].version.name %> </li>
-        <li><%=  pokemon.game_indices[1].version.name %> </li>
-        <li><%=  pokemon.game_indices[2].version.name %> </li>
-        <li><%=  pokemon.game_indices[3].version.name %> </li>
-        <li><%=  pokemon.game_indices[4].version.name %> </li>
-        <li><%=  pokemon.game_indices[5].version.name %> </li>
-        <li><%=  pokemon.game_indices[6].version.name %> </li>
-        <li><%=  pokemon.game_indices[7].version.name %> </li>
-    
-    </ul>
-</h2>
-
-<h2><b>Type:</b>
-
-    <ul>    
-        <li><%=  pokemon.types[0].type.name %></li>
-        <!-- <li><%=//  pokemon.types[1].type.name %></li> -->
-
-    </ul>
-
+<div class="container">
+    <h1 class="text-center"> <%= pokemon.name.toUpperCase() %>   </h1>
+    <p class="text-center"><a href="/pokemon">Favorites</a></p>
+    <p class="text-center"><a href="/">Home</a></p>
+    <img src="<%= pokemon.sprites.other['official-artwork']['front_default'] %>" alt="<%= pokemon.name %>">
+    <h2><b>Ability:</b> </h2>
+        <ul>
+            <li><%= pokemon.abilities[0].ability.name %> </li>
+            <li><%= pokemon.abilities[1].ability.name %> </li>
+        </ul>
      
-</h2>
+    <h2><b>Stats:</b></h2>
+        <ul>
+            <li><b>HP:</b> <%= pokemon.stats[0].base_stat %> </li>
+            <li><b>Attack:</b> <%= pokemon.stats[1].base_stat %> </li>
+            <li><b>Defense:</b> <%= pokemon.stats[2].base_stat %> </li>
+            <li><b>Special-Attack:</b> <%= pokemon.stats[3].base_stat %> </li>
+            <li><b>Special-Defense:</b> <%= pokemon.stats[4].base_stat %> </li>
+            <li><b>Speed:</b> <%= pokemon.stats[5].base_stat %> </li>
+        </ul>
+    
+    <h2><b>Games:</b></h2>
+        <ul>
+            <li><%=  pokemon.game_indices[0].version.name %> </li>
+            <li><%=  pokemon.game_indices[1].version.name %> </li>
+            <li><%=  pokemon.game_indices[2].version.name %> </li>
+            <li><%=  pokemon.game_indices[3].version.name %> </li>
+            <li><%=  pokemon.game_indices[4].version.name %> </li>
+            <li><%=  pokemon.game_indices[5].version.name %> </li>
+            <li><%=  pokemon.game_indices[6].version.name %> </li>
+            <li><%=  pokemon.game_indices[7].version.name %> </li>
+        </ul>
+    
+    <h2><b>Type:</b></h2>
+        <ul>    
+            <li><%=  pokemon.types[0].type.name %></li>
+        </ul>
+    
+</div>
+        
+    
+        
+        
+    
+    
+    
+    
+    
+    
+        
+    
+    
+            
+            
+            
+         
 
-<p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
-<p class="text-center">
-    <a href="/">Home</a>
-  </p>
+
+

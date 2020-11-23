@@ -1,16 +1,18 @@
-<h1>Your Favorites</h1>
-
-<ul>
-    <% pokemon.forEach(poke => { %>
-        <li>
-            <%= poke.name %> 
+<div class="container">
+    <h1 class="text-center">Your Favorites</h1>
+    <p class="text-center"><a href="/">Home</a></p>
     
-    </li>  
-          
-    <% }) %> 
+    <div class="well">
+        <ul><% pokemon.forEach(poke => { %>
+            <li><%= poke.name.toUpperCase() %> </li>  
+            <% }) %> 
+        </ul>
+    </div>
+</div>
+    
+        
 
-</ul>
 
-<p class="text-center">
-    <a href="/">Home</a>
-  </p>
+    
+
+
