@@ -10,7 +10,7 @@ router.get('/pokemon', function(req, res) {
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/pokemon', function(req, res) {
+router.post('/', function(req, res) {
     db.pokemon.create({
         name: req.body.name
     }).then(post => {
