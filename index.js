@@ -9,6 +9,8 @@ app.use(require('morgan')('dev'))
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(ejsLayouts)
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
 
 // GET - main index of site
 app.get('/', function(req, res) {

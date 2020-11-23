@@ -10,11 +10,12 @@ router.get('/', (req, res) => {
     })
 })
 
-// POST /pokemon - add pokemon to favorites
+// POST /pokemon - add pokemon to favorites (but don't duplicate)
 router.post('/', (req, res) => {
-    db.pokemon.create({
-        name: req.body.name
-    }).then(post => {
+    const name = req.body.name
+    db.pokemon.findOrCreate({
+        where: { name }
+    }).then(result => {
         res.redirect('/pokemon')
     })
 })
@@ -28,10 +29,10 @@ router.get('/:name', (req, res) => {
 })
 
 // DELETE /pokemon/:name - delete pokemon from favotires
-router.post('/:name', (req, res) => {
-    const corpse = req.params.name
+router.delete('/:name', (req, res) => {
+    const name = req.params.name
     db.pokemon.destroy({
-        where: { name: corpse }
+        where: { name }
     }).then(response => {
         res.redirect('/pokemon')
     })
