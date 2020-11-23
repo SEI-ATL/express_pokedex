@@ -21,9 +21,9 @@ router.post('/', (req, res) => {
 
 // GET /pokemon/:id - display details about individual pokemon
 router.get('/:id', (req, res) => {
-    const abcd = req.params.id
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${abcd}`).then(pokemon => {
-        res.render('pokemon/show', { pokemon })
+    const id = req.params.id
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => {
+        res.render('pokemon/show', { pokemon: response.data })
     })
 })
 
