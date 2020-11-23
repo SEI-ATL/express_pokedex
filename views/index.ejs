@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center" id="banner">The Original 151 Pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon" id="link">Favorites</a>
   <div id="scroll">
   </p>
  
@@ -10,11 +10,11 @@
     let upperPokeStr =upperPoke[0].toUpperCase() + upperPoke.slice(1);
     
     %>
-    <div class="well">
+    <div class="well" id="box">
       <h2><%= upperPokeStr %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn btn-primary" type="submit" id="button">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>
@@ -25,7 +25,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 
   .well {
-    background-color: rgba(160, 157, 154, 0.719);
+    background-color: rgba(192, 173, 89, 0.884);
   }
  body {
    position: relative;
@@ -39,5 +39,23 @@
 
 h1 {
   font-family: 'Bowlby One SC', cursive;
+  background-image: url('https://orig00.deviantart.net/a373/f/2012/170/6/2/pokemon_banner_by_pinkrangerwannabe-d544658.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 100px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  border-radius: 10px;
+  color: rgb(255, 254, 212);
+}
+ h2 {
+  font-family: 'Palanquin Dark', sans-serif;
+    color: rgb(255, 254, 212); 
+ }
+
+#button {
+    background-color: rgba(145, 123, 0, 0.753);
+    border-color: rgb(56, 54, 34);
 }
 </style>

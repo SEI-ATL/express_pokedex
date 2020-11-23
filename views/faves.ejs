@@ -5,17 +5,54 @@
     let upperPoke=p.dataValues.name 
     let upperPokeStr =upperPoke[0].toUpperCase() + upperPoke.slice(1);
     
-    %><h3><%= upperPokeStr %></h3>
-    <a href="/pokemon/<%= p.dataValues.name%>">Check out the details here</a>
+    %>
+    <div id="box">
+    <h2><%= upperPokeStr %></h2>
+  
+    <a href="/pokemon/<%= p.dataValues.name%>" id="link">Check out the details here</a>
     <form method="POST" action="pokemon/<%= p.dataValues.name%>/?_method=DELETE">
         <input hidden type="text" name="name" value="<%= p.dataValues.name %>">
-        <button class="btn btn-primary" type="submit">Delete from Favorites</button>
+        <button class="btn btn-primary" type="submit" id="button">Delete from Favorites</button>
     </form>
+</div>
 <% }) %>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
-    h1 {
+      @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Palanquin+Dark&display=swap');
+      h1 {
   font-family: 'Bowlby One SC', cursive;
+  background-image: url('https://orig00.deviantart.net/a373/f/2012/170/6/2/pokemon_banner_by_pinkrangerwannabe-d544658.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 100px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  border-radius: 10px;
+  color: rgb(255, 254, 212);
 }
+#box {
+    background-color: rgba(192, 173, 89, 0.884);
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+h2 {
+    font-family: 'Palanquin Dark', sans-serif;
+    color: rgb(255, 254, 212);
+}
+
+#button {
+    background-color: rgba(145, 123, 0, 0.753);
+    border-color: rgb(56, 54, 34);
+}
+
+#link {
+    color:rgba(145, 123, 0, 0.753);
+}
+
 </style>
