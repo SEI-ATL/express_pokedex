@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
 });
 
 router.get('/:name', (req, res) => {
-  let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.body.name}`;
+  let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.params.name}`;
 
     axios.get(pokemonUrl).then((response) => {
       res.render('pokemon/show', { pokemon: response.data })
