@@ -24,8 +24,8 @@ router
     let requestUrl = `http://pokeapi.co/api/v2/pokemon/${pokemonName}`
 
     axios.get(requestUrl)
-      .then(({ data }) => {
-        res.render('pokemon/detail', { pokemon: data })
+      .then(({ data: pokemon }) => {
+        res.render('pokemon/detail', { pokemon })
       })
       .catch(e => { console.error(e.stack) })
   })
