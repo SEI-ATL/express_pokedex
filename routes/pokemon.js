@@ -8,8 +8,11 @@ router.use(methodOverride("_method"));
 // GET LIST OF ALL FAVES
 
 router.get("/", async (req, res) => {
-  const favepoke = await db.pokemon.findAll().catch(() => null);
+  const favepoke = await db.pokemon.findAll(
+    {order: [['"createdAt"', 'DESC']]}
+    ).catch(() => null);
 
+    console.log(favepoke)
   if (!favepoke) {
     res.render("error");
   } else {
