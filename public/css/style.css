@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+*{
+    color: blue;
+    font-size: 25px;
+}
+
+.container {
+    color: red;
+    font-family: 'Nerko One', cursive; 
+} */
+#detailsName{
+    display: flex;
+    justify-content: center;
+}
+.details{
+    display: flex;
+    justify-content: center;
+    background-image: url('https://wallpaperset.com/w/full/1/7/e/58337.jpg');
+    height: 1000px; 
+    width: 1500px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+#pokemonDetails{
+
+    justify-content: center;
+}
+.header{
+    background: black;
+}
+
+/* .stat{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+} */
+.main-details{
+    text-align: center;
+    text-size: 20px;
+    
+}

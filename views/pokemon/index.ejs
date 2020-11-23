@@ -1,0 +1,15 @@
+render new favorites that show pokemon
+<form action="/index" method=Get>
+<h1>Favorite Pokemon</h1>
+<a href="/">Home</a>
+
+<ul>
+    <% allPoke.forEach(favorite => { %>
+    <form action="/" method="GET">
+    <a href="/pokemon/<%= favorite.name.toLowerCase()%>">
+    <li> <%= favorite.name.toUpperCase()%></li>
+    </a>
+    </form>
+    <% }) %>
+    </ul>
+</form>
