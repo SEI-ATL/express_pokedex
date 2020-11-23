@@ -23,4 +23,15 @@ router.post('/', function(req, res) {
   })
 });
 
+//more information
+router.get('/:id', (req, res) => {
+  const id = req.params.id
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+  .then((response) => {
+    let myPokemon = respose.data
+    res.render('pokemon/show', {myPokemon})
+  })
+
+})
+
 module.exports = router;
