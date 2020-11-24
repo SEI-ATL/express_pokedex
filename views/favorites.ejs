@@ -1,0 +1,15 @@
+<div class="container p-5">
+    <h1>Your favorite Pokémon</h1>
+
+    <% pokemon.forEach(poke=>{ %>
+        <div class="well">
+            <h2 class="card-title"><%= poke.name %></h2>
+            <form action="/pokemon/detailpokemon" method="GET">
+                <input hidden type="text" name="name" value="<%= poke.name %>">
+                <input type="submit" value="see more about your favorite" class="bg-primary">
+            </form>
+            
+            
+        </div>
+    <% }) %>  
+</div>

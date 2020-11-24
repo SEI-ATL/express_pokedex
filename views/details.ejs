@@ -1,0 +1,36 @@
+<style>
+    :root{
+    --darkType:rgb(59,45,32);
+    --bugType: rgb(139,153,13);
+    --electricType: rgb(231,148,3);
+    --dragonType: rgb(112,94,195);
+    --fightingType: rgb(94,33,20);
+    --fireType: rgb(198,33,0);
+    --flyingType: rgb(92,114,208);
+    --ghostType: rgb(71,71,144);
+    --grassType: rgb(55,152,5);
+    --groundType: rgb(169,140,61);
+    --iceType: rgb(111,210,246);
+    --normalType: rgb(173,164,149);
+    --poisonType: rgb(103,40,104);
+    --psychicType: rgb(220,49,100);
+    --rockType: rgb(156,135,59);
+    --waterType: rgb(23,104,195);
+}
+.pokebtn{
+    border-radius: 2rem;
+    font-size: 2rem;
+    color: white;
+    padding: 0 2rem 0 2rem;
+}
+</style>
+<div class="container">
+    <div class="well">
+        <h1><%= pokemon.name %>
+            <span class="btn pokebtn"style="background: <%= type %>; border"><%= pokemon.type %> </span>
+        </h1>
+        <h3>Height : <%= (pokemon.height * 0.328084).toFixed(2) %> feet</h3>
+        <h3>Weight : <%= (pokemon.weight * 0.220462).toFixed(2) %> lbs </h3>
+        <img src="<%= pokemon.image %>" alt="<%= pokemon.name %> ">
+    </div>
+</div>
